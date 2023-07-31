@@ -1,0 +1,27 @@
+<?php
+echo json_encode(array(
+    'id' => $user['id'],
+    'name' => $user['name'],
+    'email' => $user['email'],
+    'avatar' => array(
+		'100' => $this->Moo->getItemPhoto(array('User' => $user),array( 'prefix' => '100_square'),array(),true),
+		'200' => $this->Moo->getItemPhoto(array('User' => $user),array( 'prefix' => '200'),array(),true),
+		'600' => $this->Moo->getItemPhoto(array('User' => $user),array( 'prefix' => '600'),array(),true),
+	),
+    'last_login' => $user['last_login'],
+    'photo_count' => $user['photo_count'],
+    'friend_count' => $user['friend_count'],
+    'notification_count' => $user['notification_count'],
+    'friend_request_count' => $user['friend_request_count'],
+    'blog_count' => $user['blog_count'],
+    'topic_count' => $user['topic_count'],
+    'conversation_user_count' => $user['conversation_user_count'],
+    'video_count' => $user['video_count'],
+    'gender' => $user['gender'],
+    'birthday' => $user['birthday'],
+    'timezone' => $user['timezone'],
+    'about' => $user['about'],
+    'lang' => $user['lang'],
+    'cover' => FULL_BASE_URL.((!empty( $user['cover']) ? ($this->request->webroot."uploads/covers/".$user['cover']):($this->request->webroot."img/cover.jpg"))),
+    'profile_url'=>FULL_BASE_URL.$user['moo_href'],
+));

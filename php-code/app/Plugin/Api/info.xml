@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<info>
+   <name>Api</name>
+   <key>Api</key>
+   <version>1.0</version>
+   <description>The REST APIs provides programmatic access to read and write mooSocial data</description>
+   <author>mooSocial</author>
+   <website>https://www.moosocial.com/</website>
+   <bootstrap>1</bootstrap>
+   <routes>1</routes>
+   <settings><setting><label>API Secret Key</label><name>api_secret_key</name><description>Protecting the 'public' part of a REST API service from spam</description><type>text</type><values></values></setting></settings>
+</info>

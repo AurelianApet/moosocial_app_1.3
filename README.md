@@ -1,0 +1,3 @@
+- IOS: check ios-app/README.md
+- Android: check android-app/README.md
+- Web: check php/README.md

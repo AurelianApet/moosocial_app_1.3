@@ -1,0 +1,29 @@
+{
+  "general": {
+    "initialUrl": "https://community.moosocial.com",
+    "enableGCM": true,
+    "notificationTime" : 3000,
+    "googleAppSenderId": "1026404335029",
+    "googleApiKey" : "AIzaSyDNv85n4IrJRJZPxlNz6rkn1czDyg8n6Aw",
+    "enablePostDelete" : false,
+    "apiKey" : "betamoo",
+    "defaultLanguage" : "en"
+  },
+  "list_urls":{
+    "all_notification":"/notifications/ajax_show/home",
+    "home_everyone":"/activities/ajax_browse/everyone",
+    "home_friend":"/activities/ajax_browse/friends",
+    "term_service" : "/pages/terms-of-service",
+    "link_create_account" : "/users/avatar"
+  },
+  "languages" : [
+    {
+      "label": "English",
+      "key": "en"
+    },
+    {
+      "label": "Portuguese",
+      "key": "pt"
+    }
+  ]
+}

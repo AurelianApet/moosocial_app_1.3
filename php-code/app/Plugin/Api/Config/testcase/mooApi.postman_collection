@@ -1,0 +1,179 @@
+{
+	"variables": [],
+	"info": {
+		"name": "mooApi",
+		"_postman_id": "0dfb2e06-028f-6648-5b96-a36e183c2781",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST /auth/token",
+			"description": "Access Token Request - Allows a application to exchange the OAuth Request Token for an OAuth Access Token",
+			"item": [
+				{
+					"name": "Successful request with grant_type is password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "tests[\"Status code is 200\"] = responseCode.code === 200;\nvar data = JSON.parse(responseBody);\nif(responseCode.code === 200){\n    tests[\"Response has access_token\"] = data.hasOwnProperty(\"access_token\");\n    tests[\"Response has token_type\"] = data.hasOwnProperty(\"token_type\");\n    tests[\"Response has expires_in\"] = data.hasOwnProperty(\"expires_in\");\n    tests[\"Response has refresh_token\"] = data.hasOwnProperty(\"refresh_token\");\n    tests[\"Response has scope\"] = data.hasOwnProperty(\"scope\");\n    if(data.hasOwnProperty(\"access_token\")){\n            postman.setEnvironmentVariable(\"token\", data.access_token);\n  \n    }\n        if(data.hasOwnProperty(\"access_token\")){\n           postman.setEnvironmentVariable(\"refresh_token\", data.refresh_token);\n  \n    }          \n\n}\n"
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/auth/token",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "username",
+									"value": "root@local.com",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "password",
+									"value": "1",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "Using root@local.com / 1 "
+					},
+					"response": []
+				},
+				{
+					"name": "Failed request with grant_type is password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "tests[\"Status code is 400\"] = responseCode.code === 400;\nvar data = JSON.parse(responseBody);\nif(responseCode.code === 400){\n    tests[\"Response has name\"] = data.hasOwnProperty(\"name\");\n    tests[\"Response has message\"] = data.hasOwnProperty(\"message\");\n    tests[\"Response has url\"] = data.hasOwnProperty(\"url\");\n}\n"
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/auth/token",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "username",
+									"value": "root@local.com",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "password",
+									"value": "2",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "Using root@local.com / 2 "
+					},
+					"response": []
+				},
+				{
+					"name": "Vaidated request with grant_type is password  and username is invalid",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "tests[\"Status code is 400\"] = responseCode.code === 400;\nvar data = JSON.parse(responseBody);\nif(responseCode.code === 400){\n    tests[\"Response has name\"] = data.hasOwnProperty(\"name\");\n    tests[\"Response has message\"] = data.hasOwnProperty(\"message\");\n    tests[\"Response has url\"] = data.hasOwnProperty(\"url\");\n    if(data.hasOwnProperty(\"name\")){\n        tests[\"Response has the warning : username or password is invalid\"] = data.name.indexOf(\"username or password is invalid\") > -1;\n    }\n    \n}\n"
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/auth/token",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "username",
+									"value": "root1@local.com",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "password",
+									"value": "2",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": "Using root1@local.com / 1 "
+					},
+					"response": []
+				},
+				{
+					"name": "Successful request with grant_type is refresh_token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": "tests[\"Status code is 200\"] = responseCode.code === 200;\nvar data = JSON.parse(responseBody);\nif(responseCode.code === 200){\n    tests[\"Response has access_token\"] = data.hasOwnProperty(\"access_token\");\n    tests[\"Response has token_type\"] = data.hasOwnProperty(\"token_type\");\n    tests[\"Response has expires_in\"] = data.hasOwnProperty(\"expires_in\");\n    tests[\"Response has refresh_token\"] = data.hasOwnProperty(\"refresh_token\");\n    tests[\"Response has scope\"] = data.hasOwnProperty(\"scope\");\n}\n"
+							}
+						}
+					],
+					"request": {
+						"url": "{{url}}/auth/token",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "grant_type",
+									"value": "refresh_token",
+									"type": "text",
+									"enabled": true
+								},
+								{
+									"key": "refresh_token",
+									"value": "{{refresh_token}}",
+									"type": "text",
+									"enabled": true
+								}
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,20 @@
+source 'https://github.com/CocoaPods/Specs.git'
+# Uncomment this line to define a global platform for your project
+platform :ios, '9.0'
+# Uncomment this line if you're using Swift
+use_frameworks!
+
+pod 'Firebase/Core'
+pod 'Firebase/Messaging'
+pod 'Fabric'
+pod 'Crashlytics'
+
+target 'mooApp' do
+    pod 'Alamofire', '~> 4.0'
+    pod 'AlamofireImage', '~> 3.0'
+end
+
+target 'mooAppTests' do
+
+end
+

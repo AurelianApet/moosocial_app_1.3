@@ -1,0 +1,27 @@
+<?php
+echo json_encode(array_merge(array(
+    'id' => $me['id'],
+    'name' => $me['name'],
+    'email' => $me['email'],
+    'avatar' => array(
+		'100' => $this->Moo->getItemPhoto(array('User' => $me),array( 'prefix' => '100_square'),array(),true),
+		'200' => $this->Moo->getItemPhoto(array('User' => $me),array( 'prefix' => '200'),array(),true),
+		'600' => $this->Moo->getItemPhoto(array('User' => $me),array( 'prefix' => '600'),array(),true),
+	),
+    'last_login' => $me['last_login'],
+    'photo_count' => $me['photo_count'],
+    'friend_count' => $me['friend_count'],
+    'notification_count' => $me['notification_count'],
+    'friend_request_count' => $me['friend_request_count'],
+    'blog_count' => $me['blog_count'],
+    'topic_count' => $me['topic_count'],
+    'conversation_user_count' => $me['conversation_user_count'],
+    'video_count' => $me['video_count'],
+    'gender' => $me['gender'],
+    'birthday' => $me['birthday'],
+    'timezone' => $me['timezone'],
+    'about' => $me['about'],
+    'lang' => $me['lang'],
+    'cover' =>  $this->storage->getUrl($me["id"],'',$me['cover'],"moo_covers"),
+    'profile_url'=>FULL_BASE_URL.$me['moo_href'],
+),$extra));

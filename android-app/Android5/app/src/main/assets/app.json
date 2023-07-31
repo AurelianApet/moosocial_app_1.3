@@ -1,0 +1,215 @@
+{
+  "general": {
+    "initialUrl": "http://127.0.0.1/moolab/2.2.2",
+    "enableGCM": true,
+    "notificationTime" : 3000,
+    "googleAppSenderId": "697076046701",
+    "googleApiKey" : "AIzaSyDtH2gu7Pqi7oltB1_V87jmmGWoaqsFxz4",
+    "enablePostDelete" : false,
+    "apiKey" : "3242343"
+  },
+  "list_urls":{
+    "all_notification":"/notifications/ajax_show/home",
+    "home_everyone":"/activities/ajax_browse/everyone",
+    "home_friend":"/activities/ajax_browse/friends",
+    "term_service" : "/pages/term-of-service",
+    "link_create_account" : "/users/avatar"
+  }
+  ,
+  "menus": {
+    "pages":[
+      {
+        "url": "/pages/about-us",
+        "label": "About Us",
+        "key": "pages_about_us"
+      },
+      {
+        "url": "/pages/term-of-service",
+        "label": "Term of Service",
+        "key": "pages_term_service"
+      },
+      {
+        "url": "/pages/privacy-policy",
+        "label": "Privacy Policy",
+        "key": "pages_privacy_policy"
+      },
+      {
+        "url": "/home/contact",
+        "label": "Contact Us",
+        "key": "pages_contact_us"
+      }
+    ],
+    "account":[
+      {
+        "url": "/users/profile",
+        "label": "Profile Information",
+        "key": "account_profile"
+      },
+      {
+        "url": "/users/avatar",
+        "label": "Change Profile Picture",
+        "key": "account_picture"
+      },
+      {
+        "url": "/users/password",
+        "label": "Change Password",
+        "key": "account_password"
+      },
+      {
+        "url": "/conversations/ajax_browse",
+        "label": "Message",
+        "key": "message_manage"
+      },
+      {
+        "url": "/friends/ajax_invite",
+        "label": "Invite Friends",
+        "key": "account_invite"
+      }
+    ],
+    "items": [
+      {
+        "url": "/activities/ajax_browse/everyone",
+        "label": "Home",
+        "icon":"ic_home",
+        "key": "home",
+        "subLinks": []
+      },
+      {
+        "url": "/users",
+        "label": "People",
+        "icon":"ic_member",
+        "key": "users",
+        "subLinks": [
+          {
+            "url": "/users",
+            "label": "Everyone"
+          },
+          {
+            "url": "/users/ajax_browse/friends",
+            "label": "My Friends"
+          }
+        ]
+      },
+      {
+        "url": "/blogs",
+        "label": "Blogs",
+        "icon":"ic_blog",
+        "key": "blogs",
+        "subLinks": [
+          {
+            "url": "/blogs",
+            "label": "All Entries"
+          },
+          {
+            "url": "/blogs/browse/my",
+            "label": "My Entries"
+          },
+          {
+            "url": "/blogs/browse/friends",
+            "label": "Friends' Entries"
+          }
+        ]
+      },
+      {
+        "url": "/photos",
+        "label": "Photos",
+        "icon":"ic_photo",
+        "key": "photos_albums",
+        "subLinks": [
+          {
+            "url": "/photos",
+            "label": "All Photos"
+          },
+          {
+            "url": "/albums/browse/my",
+            "label": "My Photos"
+          },
+          {
+            "url": "/albums/browse/friends",
+            "label": "Friends' Photos"
+          }
+        ]
+      },
+      {
+        "url": "/videos",
+        "label": "Videos",
+        "icon":"ic_video",
+        "key": "videos",
+        "subLinks": [
+          {
+            "url": "/videos",
+            "label": "All Videos"
+          },
+          {
+            "url": "/videos/browse/my",
+            "label": "My Videos"
+          },
+          {
+            "url": "/videos/browse/friends",
+            "label": "Friends' Videos"
+          }
+        ]
+      },
+      {
+        "url": "/topics",
+        "label": "Topics",
+        "icon":"ic_topic",
+        "key": "topics",
+        "subLinks": [
+          {
+            "url": "/topics",
+            "label": "All Topics"
+          },
+          {
+            "url": "/topics/browse/my",
+            "label": "My Topics"
+          },
+          {
+            "url": "/topics/browse/friends",
+            "label": "Friends' Topics"
+          }
+        ]
+      },
+      {
+        "url": "/groups",
+        "label": "Groups",
+        "icon":"ic_group",
+        "key": "groups",
+        "subLinks": [
+          {
+            "url": "/groups",
+            "label": "All Groups"
+          },
+          {
+            "url": "/groups/browse/my",
+            "label": "My Groups"
+          },
+          {
+            "url": "/groups/browse/friends",
+            "label": "Friends' Groups"
+          }
+        ]
+      },
+      {
+        "url": "/events",
+        "label": "Events",
+        "icon":"ic_event",
+        "key": "events",
+        "subLinks": [
+          {
+            "url": "/events",
+            "label": "All Events"
+          },
+          {
+            "url": "/events/browse/my",
+            "label": "My Events"
+          },
+          {
+            "url": "/events/browse/friends",
+            "label": "Friends' Events"
+          }
+        ]
+      }
+    ]
+  }
+}

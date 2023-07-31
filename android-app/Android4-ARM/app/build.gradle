@@ -1,0 +1,56 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.+'
+    }
+}
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+    defaultConfig {
+        applicationId 'com.moosocial.app'
+        minSdkVersion 14
+        maxSdkVersion 19
+        targetSdkVersion 22
+        versionCode 37
+        versionName "1.93"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+}
+
+repositories {
+    maven {
+        url 'https://download.01.org/crosswalk/releases/crosswalk/android/maven2'
+    }
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:design:23.1.1'
+    compile 'de.hdodenhof:circleimageview:1.2.2'
+    compile 'com.google.android.gms:play-services-gcm:8.1.0'
+    compile 'com.wdullaer:materialdatetimepicker:1.5.4'
+    compile project(":volley-master")
+    compile files('libs/gson-2.3.1.jar')
+    compile 'com.google.android.gms:play-services-ads:8.1.0'
+    compile 'org.xwalk:xwalk_core_library:14.43.343.23:arm@aar'
+    compile('com.crashlytics.sdk.android:crashlytics:2.5.5@aar') {
+        transitive = true;
+    }
+    compile 'com.afollestad.material-dialogs:core:0.8.2.0'
+}
